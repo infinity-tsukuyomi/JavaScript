@@ -45,7 +45,7 @@ if (day >= 1 && day <= 10) {
 
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано
 // на цей день (можна замість плану на день, назву дня англійською).
-let schedule = "Sunday";
+let schedule = "asdijoida";
 
 switch (schedule) {
     case "Monday":
@@ -75,6 +75,9 @@ switch (schedule) {
     case "Sunday":
         console.log("Dying:)");
         break;
+
+    default:
+        console.log("Not existing day");
 }
 
 //     - Користувач вводить або має два числа.
