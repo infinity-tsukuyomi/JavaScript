@@ -54,19 +54,19 @@
 // - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
 
 // let nums = [11,21,3];
-// let sortNums = nums.sort((item1, item2) => {
-//     return item1-item2;
-// })
 
-// let nums = [11,21,3];
-// let sortNums = nums.sort((item1, item2) => {
-//     return item1-item2;
-// })
-
-// let nums = [21, 11, 3];
-// let sortNums = nums.sort((item1, item2) => {
-//     return item2 - item1;
-// });
+// function sortNums(nums, direction) {
+//     if (direction === 'ascending') {
+//        return nums.sort((u1, u2) => {
+//         return u1 - u2;
+//        })
+//     } else {
+//         return nums.sort((u1, u2) => {
+//             return u2 - u1;
+//         })
+//     }
+// }
+// console.log(sortNums(nums, 'descending'));
 // -------------------------------------------------------------------------
 
 // - є масив
