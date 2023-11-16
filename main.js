@@ -46,7 +46,8 @@
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map та колбеку перетворити всі об'єкти в масиві на стрінгові.
 
 // let arr = [10,8,-7,55,987,-1011,0,1050,0];
-// arr.map(item => console.log(item));
+// let map = arr.map((item) => item.toString())
+// console.log(map);
 
 // ----------------------------------------------------------------------------
 
@@ -156,5 +157,3 @@
 // let findAllDiamonds = deck.filter(item => item.cardSuit === 'diamond')
 
 // let findAllClubsMoreNine = deck.filter(item => item.value >= '9' && item.cardSuit === 'clubs')
-
-let smth = 'went goodly'
