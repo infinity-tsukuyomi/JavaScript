@@ -156,3 +156,5 @@
 // let findAllDiamonds = deck.filter(item => item.cardSuit === 'diamond')
 
 // let findAllClubsMoreNine = deck.filter(item => item.value >= '9' && item.cardSuit === 'clubs')
+
+let smth = 'went goodly'
