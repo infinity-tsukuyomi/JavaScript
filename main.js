@@ -66,7 +66,7 @@
 
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
 
-// let sort = clients.sort((a, b) => a.order < b.order);
+// let sort = clients.sort((a, b) => a.order.length < b.order.length);
 // console.log(sort);
 
 // - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
@@ -95,7 +95,7 @@
 //         this.year = newValue;
 //     }
 //     this.addDriver = function (driver) {
-
+//         this.driver = driver;
 // }
 // let car1 = new Car('JLS', 'Mercedes', 2018, 365, 6);
 // console.log(car1);
@@ -131,7 +131,9 @@ class Car {
         this.changeYear = function (newValue) {
             this.year = newValue;
         }
-        this.addDriver = function (driver) {}
+        this.addDriver = function (driver) {
+            this.driver = driver;
+        }
     }
 }
 let car1 = new Car('JLS', 'Mercedes', 2018, 365, 6);
@@ -181,5 +183,5 @@ console.log(car1);
 //         }
 //     }
 
-//     let find = dolls.find(value => value.footSize === 36);
+//     let find = dolls.find(value => value.footSize === prince.shoe);
 //     console.log(find);
