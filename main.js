@@ -3,53 +3,45 @@
 //     - Напишіть код,  котрий :
 // -- отримує текст з параграфа з id "content"
 
-/* let getElementById= document.getElementById('content');
-console.log(getElementById) */
+/* let elementWithId = document.getElementById('content');
+console.log(elementWithId.innerText) */
 // -----------------------------------------------------------
 // -- отримує текст з блоку з id "rules"
 
-/* let getElementById1 = document.getElementById('rules');
-console.log(getElementById1.innerText); */
+/* let elementWithId = document.getElementById('rules');
+console.log(elementWithId.innerText); */
 // -----------------------------------------------------------
 // -- замініть текст параграфа з id 'content' на будь-який інший
 
-/* let getElementById = document.getElementById('content');
-getElementById.innerText = 'dijaidaiojdaijodaiojdaioad'; */
+/* let elementWithId = document.getElementById('content');
+elementWithId.innerText = 'dijaidaiojdaijodaiojdaioad'; */
 // -----------------------------------------------------------
 // -- замініть текст параграфа з id 'rules' на будь-який інший
 
-/* let getElementById1 = document.getElementById('rules');
-getElementById1.innerText = '213147141414981skdamkldakkldam'; */
+/* let elementWithId = document.getElementById('rules');
+elementWithId.innerText = '213147141414981skdamkldakkldam'; */
 // -----------------------------------------------------------
 // -- змініть кожному елементу колір фону на червоний
 
-/* function reCall(startElement) {
-    if (startElement.children.length) {
-        for (const element of startElement.children) {
-            element.style.background = 'red';
-        }
-    }
-}
-    reCall(document.body); */
+/* let children = document.body.children;
+for (const child of children) {
+    child.style.color = 'red';
+} */
 // -----------------------------------------------------------
 // -- змініть кожному елементу колір тексту на синій
 
-/* function reCall1(startElement) {
-    if (startElement.children.length) {
-        for (const element of startElement.children) {
-            element.style.color = 'blue';
-        }
-    }
-}
-reCall1(document.body); */
+/* let children = document.body.children;
+for (const child of children) {
+    child.style.color = 'blue';
+} */
 // -----------------------------------------------------------
 // -- отримати весь список класів елемента з id=rules і вивести їх в console.log
 
-/* let divWithIdRules = document.getElementById('rules');
-console.log(divWithIdRules.classList); */
+/* let divRules = document.getElementById('rules');
+console.log(divRules.classList); */
 // -----------------------------------------------------------
 // -- поміняти колір тексту у всіх елементів fc_rules на червоний
 /* let liWithColorRed = document.getElementsByClassName('fc_rules');
-for (const fcr of liWithColorRed) {
-    fcr.style.color = 'red';
+for (const fcrules of liWithColorRed) {
+    fcrules.style.color = 'red';
 } */
