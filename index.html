@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- -створити форму з інпутами для name та age.
+При відправці форми записати об'єкт в localstorage  -->
+
+<!-- <form action="" name="forma">
+    <input type="text" name="name">
+    <input type="number" name="age">
+    <button id="btn">Submit</button>
+</form> -->
+
+<!-- -створити форму з інпутами для model,type та volume автівки. 
+при відпарвці форми об'єкти зберігаються в масиві в локальному сховищі.   -->
+
+<!-- <form action="" name="form">
+    <input type="text" name="model">
+    <input type="text" name="type">
+    <input type="text" name="volume">
+    <button id="btn">Submit</button>
+</form> -->
+
+<script>
+    /* Task 1 */
+    /*let form = document.forms.forma;
+    
+    form.onsubmit = function (e) {
+        e.preventDefault();
+        let name = form.name.value;
+        let age = form.age.value;
+        localStorage.setItem('data', JSON.stringify({name, age}));
+    } */
+
+    /* Task 2 */
+    /* let form = document.forms.form;
+
+    form.onsubmit = function (e) {
+        e.preventDefault();
+        let model = this.model.value;
+        let type = this.type.value;
+        let volume = this.volume.value;
+
+        let data = [];
+        data.push({model, type, volume});
+        localStorage.setItem('dataBase', JSON.stringify(data));
+    } */
+
+</script>
+</body>
+</html>
