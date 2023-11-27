@@ -9,9 +9,9 @@
 <!-- -створити форму з інпутами для name та age.
 При відправці форми записати об'єкт в localstorage  -->
 
-<!-- <form action="" name="forma">
-    <input type="text" name="name">
-    <input type="number" name="age">
+<!-- <form action="" name="form">
+    <input type="text" name="name" placeholder="Enter your name">
+    <input type="number" name="age" placeholder="Enter your age">
     <button id="btn">Submit</button>
 </form> -->
 
@@ -19,15 +19,15 @@
 при відпарвці форми об'єкти зберігаються в масиві в локальному сховищі.   -->
 
 <!-- <form action="" name="form">
-    <input type="text" name="model">
-    <input type="text" name="type">
-    <input type="text" name="volume">
+    <input type="text" name="model" placeholder="Enter your car's model">
+    <input type="text" name="type" placeholder="Enter your car's type">
+    <input type="text" name="volume" placeholder="Enter your car's volume">
     <button id="btn">Submit</button>
 </form> -->
 
 <script>
     /* Task 1 */
-    /*let form = document.forms.forma;
+    /*let form = document.forms.form;
     
     form.onsubmit = function (e) {
         e.preventDefault();
@@ -45,9 +45,9 @@
         let type = this.type.value;
         let volume = this.volume.value;
 
-        let data = [];
-        data.push({model, type, volume});
-        localStorage.setItem('dataBase', JSON.stringify(data));
+        let car = {model, type, volume};
+        let oldArray = JSON.parse(localStorage.getItem('cars')) || [];
+        localStorage.setItem('cars', JSON.stringify([...oldArray, car]));
     } */
 
 </script>
