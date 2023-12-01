@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // Зробити свій розпорядок дня. У вас має бути більше 10 асинхронних дій з рандомними затримками
+    // Вам потрібно синхронізувати всі свої дії за допомогою промісів та async await (Код має бути написаний окремо)
+    // Затримка має бути не в порядку зростання, а будь яка. При тому ваші дії мають бути синхронізовані.
+    // // Наприклад, // Прокинутись - 0.3 сек // Піти в душ 0.5 сек // Дочекатись автобус - 3 сек // Пообідати - 1 сек
+
+    // Прокинувся - 0.2с, Чистка зубів - 0.5с, Тренування - 2с, Душ - 1,5с, Сніданок - 0.8с, Програмування - 3.5с, Обід - 0.5с,
+    // Пес - 0.3с, Вечеря - 0.7с, Вільний час - 2с
+
+    function wakeUp(awake) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+               if (awake) {
+                   resolve('I woke up')
+               } else {
+                   reject('You are sleeping')
+               }
+            }, 200)
+        })
+    }
+
+    function brushTeeth(teeth) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (teeth) {
+                    resolve('I brushed my teeth')
+                } else {
+                    reject('My mouth stinks')
+                }
+            }, 500)
+        })
+    }
+
+    function training(train) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (train) {
+                    resolve('I am training')
+                } else {
+                    reject('I am lazy')
+                }
+            }, 2000)
+        })
+    }
+
+    function havingShower(shower) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (shower) {
+                    resolve('I am pure')
+                } else {
+                    reject('I am stink')
+                }
+            }, 1500)
+        })
+    }
+
+    function havingBreakfast(breakfast) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (breakfast) {
+                    resolve('I am full')
+                } else {
+                    reject('I am hungry')
+                }
+            }, 800)
+        })
+    }
+
+    function programming(it) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (it) {
+                    resolve('I am busy')
+                } else {
+                    reject('I am free')
+                }
+            }, 3500)
+        })
+    }
+
+    function havingLunch(lunch) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (lunch) {
+                    resolve('I am full')
+                } else {
+                    reject('I am hungry')
+                }
+            }, 500)
+        })
+    }
+
+    function walkingWithDog(dog) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (dog) {
+                    resolve('I am walking')
+                } else {
+                    reject('I dont have a dog')
+                }
+            }, 300)
+        })
+    }
+
+    function havingDinner(dinner) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (dinner) {
+                    resolve('I am full')
+                } else {
+                    reject('I am hungry')
+                }
+            }, 700)
+        })
+    }
+
+    function havingFreeTime(freeTime) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (freeTime) {
+                    resolve('I am chilling')
+                } else {
+                    reject('I didnt work enough')
+                }
+            }, 2000)
+        })
+    }
+
+    async function day() {
+        const morning = await wakeUp(true);
+        console.log(morning);
+
+        const brushing = await brushTeeth(morning);
+        console.log(brushing);
+
+        const gym = await training(brushing);
+        console.log(gym);
+
+        const showering = await havingShower(gym);
+        console.log(showering);
+
+        const eatingBreakfast = await havingBreakfast(gym);
+        console.log(eatingBreakfast);
+
+        const doingIt = await programming(eatingBreakfast);
+        console.log(doingIt);
+
+        const eatingLunch = await havingLunch(doingIt);
+        console.log(eatingLunch);
+
+        const dogging = await walkingWithDog(eatingLunch);
+        console.log(dogging);
+
+        const eatingDinner = await havingDinner(dogging);
+        console.log(eatingDinner);
+
+        const procrastinating = await havingFreeTime(gym);
+        console.log(procrastinating);
+    }
+
+    day();
+
+</script>
+</body>
+</html>
