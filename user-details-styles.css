@@ -1,4 +1,4 @@
-.userDetails {
+#userDetails {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,8 +7,10 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-.userDetails > button {
+#userDetails > button {
     width: 90%;
+    background-color: yellow;
+    font-family: "Arial Black";
 }
 
 .divAddress {
@@ -26,9 +28,13 @@
 .postsDiv {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .postsDiv > button {
-    width: 100px;
+    width: 150px;
+    background-color: cornflowerblue;
+    font-family: 'Courier New', Courier, monospace;
 }
