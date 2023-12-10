@@ -1,0 +1,20 @@
+#users {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 200px 200px 200px 200px 200px;
+    justify-content: center;
+    margin-top: 50px;
+    column-gap: 150px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+#user_button {
+    width: 150px;
+    height: 40px;
+}

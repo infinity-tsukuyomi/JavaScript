@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user-details-styles.css">
+    <title>User Details</title>
+</head>
+<body>
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users/')
+            .then(response => response.json())
+            .then(users => {
+                let myUserData = localStorage.getItem('myUser');
+                let usersObj = JSON.parse(myUserData);
+
+                for (let i = 0; i < 1; i++) {
+                    let userDetailsDiv = document.createElement('div')
+                    userDetailsDiv.classList.add('userDetails');
+
+                    let divId = document.createElement('div');
+                    divId.innerText = `id: ${usersObj.id}`;
+
+                    let divName = document.createElement('div');
+                    divName.innerText = `name: ${usersObj.name}`;
+
+                    let divUsername = document.createElement('div');
+                    divUsername.innerText = `username: ${usersObj.username}`;
+
+                    let divEmail = document.createElement('div');
+                    divEmail.innerText = `email: ${usersObj.email}`;
+                    
+                    let divAddress = document.createElement('div');
+                    divAddress.classList.add('divAddress')
+                    let divAddressInfo = document.createElement('div');
+                    divAddressInfo.classList.add('divAddressInfo');
+                    divAddress.innerText = 'address: ';
+                    divAddressInfo.innerText =  
+                    `street: ${usersObj.address.street}
+                    suite: ${usersObj.address.suite}
+                    city: ${usersObj.address.city}
+                    zipcode: ${usersObj.address.zipcode}
+                    geo: lat: ${usersObj.address.geo.lat}, lng: ${usersObj.address.geo.lng}`;
+
+                    let divPhone = document.createElement('div');
+                    divPhone.innerText = `phone: ${usersObj.phone}`;
+
+                    let divWebsite = document.createElement('div');
+                    divWebsite.innerText = `website: ${usersObj.website}`;
+
+                    let divCompany = document.createElement('div');
+                    divCompany.classList.add('divCompany');
+                    let divCompanyInfo = document.createElement('div');
+                    divCompanyInfo.classList.add('divCompanyInfo');
+                    divCompany.innerText = 'company: ';
+                    divCompanyInfo.innerText = 
+                    `name: ${usersObj.company.name}
+                    catchPhrase: ${usersObj.company.catchPhrase}
+                    bs: ${usersObj.company.bs}`;
+
+                    let btn2 = document.createElement('button');
+                    btn2.onclick = () => {
+                        fetch(`https://jsonplaceholder.typicode.com/users/${usersObj.id}/posts`)
+                            .then(response => response.json())
+                            .then(posts => {
+                                for (const post of posts) {
+                                    let postsDiv = document.createElement('div');
+                                    postsDiv.classList.add('postsDiv');
+                                    let btn3 = document.createElement('button');
+
+                                    postsDiv.innerText = `${post.title}`;
+                                    btn3.innerText = 'Post Details';
+                                    btn3.onclick = () => {
+                                        window.open("post-details.html", "_blank");
+                                        let myPost = `post${post.title}`;
+                                        localStorage.setItem('myPost', JSON.stringify(post));
+                                    }
+
+                                    document.body.appendChild(postsDiv);
+                                    postsDiv.append(btn3);
+                                }
+                            })
+                    }
+
+                    btn2.innerText = 'Post of Current User';
+                
+                    document.body.append(userDetailsDiv);
+                    userDetailsDiv.append(divId, divName, divUsername, divEmail, divAddress, divAddressInfo, 
+                    divPhone, divWebsite, divCompany, divCompanyInfo, btn2);
+                }
+            });    
+                // let userObject = localStorage.getItem('myUser');
+                // console.log(userObject);
+                // let parsedUsers = JSON.parse(userObject);
+                // console.log(parsedUsers);
+
+                // let userDiv = document.createElement('div');
+                // userDiv.classList.add('details');
+                // let elementDiv = document.createElement('div');
+                // let btn2 = document.createElement('button');
+                // btn2.onclick = () => {
+                //     fetch(`https://jsonplaceholder.typicode.com/users/8/posts`)
+                //         .then(response => response.json())
+                //         .then(posts => {
+                //             for (const post of posts) {
+                //                 let postsDiv = document.createElement('div');
+                //                 let btn3 = document.createElement('button');
+
+                //                 postsDiv.innerText = `${post.title}`;
+                //                 btn3.innerText = 'Post Details';
+                //                 btn3.onclick = () => {
+                //                     window.open("post-details.html", "_blank");
+                //                     let myPost = `post${post.title}`;
+                //                     localStorage.setItem('myPost', JSON.stringify(post));
+                //                 }
+
+                //                 document.body.appendChild(postsDiv);
+                //                 postsDiv.append(btn3);
+                //             }
+                //         })
+                // }
+
+                // elementDiv.innerText = userObject;
+                // btn2.innerText = 'Post of Current User';
+
+                // userDiv.append(elementDiv, btn2);
+                // document.body.appendChild(userDiv);
+// ---------------------------------------------------------------
+                // for (const user in usersObj) {
+                //     let userDetailsDiv = document.createElement('div')
+                //     userDetailsDiv.classList.add('user-details');
+
+                //     let divId = document.createElement('div');
+                //     divId.innerText = `id - ${usersObj.id}`
+
+                //     document.body.appendChild(userDetailsDiv);
+                //     userDetailsDiv.append(divId);
+                // }
+                   
+    </script>
+</body>
+</html>

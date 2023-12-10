@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user-styles.css">
+    <title>Users</title>
+</head>
+<body>
+    <div id="users"></div>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(users => {
+                for (const user of users) {
+                    let div = document.getElementById('users');
+                    let divElements = document.createElement('div');
+                    let btn1 = document.createElement('button');
+
+                    divElements.classList.add('user')
+                    divElements.innerText = `${user.id} ${user.name}`;
+                    btn1.id = 'user_button';
+                    btn1.innerText = `User${user.id} Details`;
+                    btn1.onclick = () => {
+                        window.open("user-details.html", "_blank")
+                        let myUser = `user${user.id}`;
+                        localStorage.setItem('myUser', JSON.stringify(user));
+                    };
+
+                    div.append(divElements);
+                    divElements.appendChild(btn1);
+                }    
+            });
+    </script> 
+</body>
+</html>

@@ -1,0 +1,34 @@
+.userDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.userDetails > button {
+    width: 90%;
+}
+
+.divAddress {
+    margin-top: 10px;
+}
+
+.divAddressInfo {
+    margin-bottom: 10px;
+}
+
+.divCompanyInfo {
+    margin-bottom: 10px;
+}
+
+.postsDiv {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.postsDiv > button {
+    width: 100px;
+}

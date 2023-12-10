@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="post-details-styles.css">
+    <title>Post Details</title>
+</head>
+<body>
+    <script>
+        let myPostData = localStorage.getItem('myPost');
+        let postsObj = JSON.parse(myPostData);
+
+        fetch(`https://jsonplaceholder.typicode.com/users/${postsObj.id}/posts`)
+            .then(response => response.json())
+            .then(posts => {
+                for (let i = 0; i < 1; i++) {
+                    let postDetailsDiv = document.createElement('div');
+                    postDetailsDiv.classList.add('postDetailsDiv');
+
+                    let userId = document.createElement('div');
+                    userId.innerText = `userId: ${postsObj.userId}`;
+
+                    let postId = document.createElement('div');
+                    postId.innerText = `id: ${postsObj.id}`;
+
+                    let postTitle = document.createElement('div');
+                    postTitle.innerText = `title: ${postsObj.title}`;
+
+                    let postBody = document.createElement('div');
+                    postBody.innerText = `body: ${postsObj.body}`;
+
+                    fetch(`https://jsonplaceholder.typicode.com/posts/${postsObj.id}/comments`) 
+                        .then(response => response.json())
+                        .then(comments => {
+                            for (const comment of comments) {
+                                let commentDiv = document.createElement('div');
+                                commentDiv.classList.add('commentDiv');
+
+                                let commentPostId = document.createElement('div')
+                                commentPostId.innerText = `postId: ${postsObj.id}`;
+
+                                let commentName = document.createElement('div');
+                                commentName.innerText = `name: ${comment.name}`;
+
+                                let commentEmail = document.createElement('div');
+                                commentEmail.innerText = `email: ${comment.email}`;
+
+                                let commentBody = document.createElement('div');
+                                commentBody.innerText = `body: ${comment.body}`;
+
+                                document.body.appendChild(commentDiv);
+                                commentDiv.append(commentPostId, commentName, commentEmail, commentBody);
+                            }
+                        })
+                    
+                    document.body.append(postDetailsDiv);
+                    postDetailsDiv.append(userId, postId, postTitle, postBody);
+                }
+            })
+    </script>
+</body>
+</html>
