@@ -1,3 +1,7 @@
+body {
+    background-color: purple;
+}
+
 #users {
     display: grid;
     grid-template-columns: 200px 200px;
@@ -17,4 +21,6 @@
 #user_button {
     width: 150px;
     height: 40px;
+    background-color: yellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
